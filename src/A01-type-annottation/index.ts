@@ -1,5 +1,5 @@
 // Tipos básicos(aqui ocorre o inferencia de tipos)
-const nome: string = "João";
+let nome: string = "João";
 let age: number = 27;
 let adult: boolean = true;
 let simbol: symbol = Symbol('qualquer-symbol');

@@ -4,7 +4,7 @@ enum Cors{
   Azul,
 }
 
-function changeColor(color: Cors): void{
+export function changeColor(color: Cors): void{
   console.log(Cors[color]);
 }
 

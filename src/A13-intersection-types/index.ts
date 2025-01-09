@@ -12,5 +12,4 @@ const person1: Person = {
 
 console.log(person1);
 
-export { person1 }
-
+export { person1 };

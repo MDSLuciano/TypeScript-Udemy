@@ -23,5 +23,4 @@ export function setFavoriteColor(person: Person, color: FavoriteColor): Person {
 }
 
 console.log(setFavoriteColor(person, 'Red'));
-console.log((person));
-
+console.log(person);

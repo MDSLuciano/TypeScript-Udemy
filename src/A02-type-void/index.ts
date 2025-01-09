@@ -9,11 +9,10 @@ const person = {
 
   showName(): void {
     console.log(this.name + ' ' + this.sobrenome);
-  }
-}
+  },
+};
 
 noReturn('Luiz', 'Otávio');
 person.showName();
-
 
 export { person };

@@ -1,8 +1,9 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './src/A0019-exercicio/A0019-exercicio.ts',
+  entry: './src/A18-exercicio/index.ts',
   module: {
     rules: [
       {

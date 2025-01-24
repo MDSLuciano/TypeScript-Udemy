@@ -1,4 +1,11 @@
+// Uma classe abstrata em TypeScript é como uma planta arquitetônica
+// para outras classes. Não pode ser instanciada diretamente, ou seja,
+// você não pode criar objetos diretamente de uma classe abstrata.
+// Em vez disso, outras classes devem derivar dela e implementar
+// seus métodos abstratos.
+
 export abstract class Character {
+  //A classe abstrata nao pode ser instanciada, mas pode ser herdada forçando a passar o valor dela na instância.
   protected abstract emoji: string;
   constructor(
     protected name: string,

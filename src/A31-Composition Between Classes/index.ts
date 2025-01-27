@@ -1,27 +1,37 @@
-export class ShoppingCart {
-  private readonly products: Product[] = [];
-
-  addProducts(...products: Product[]): void {
-    this.products.push(...products);
+export class Car {
+  private readonly motor = new Motor();
+  start(): void {
+    this.motor.start();
   }
-
-  productQuantity(): number {
-    return this.products.length;
+  accelerate(): void {
+    this.motor.accelerate();
   }
-
-  totalValue(): number {
-    return this.products.reduce((sum, product) => sum + product.price, 0);
+  stop(): void {
+    this.motor.stop();
+  }
+  turnOff(): void {
+    this.motor.turnOff();
   }
 }
 
-export class Product {
-  constructor(public name: string, public price: number) {}
+export class Motor {
+  start(): void {
+    console.log('motor started');
+  }
+  accelerate(): void {
+    console.log('motor accelerated');
+  }
+  stop(): void {
+    console.log('motor stopped');
+  }
+  turnOff(): void {
+    console.log('motor turned off');
+  }
 }
 
-const product1 = new Product('Shirt', 19.9);
-const product2 = new Product('Shirt', 19.9);
-const product3 = new Product('Short', 20);
+const car = new Car();
 
-const shoppingCart = new ShoppingCart();
-shoppingCart.addProducts(product1, product2, product3);
-console.log(shoppingCart.totalValue());
+car.start();
+car.accelerate();
+car.stop();
+car.turnOff();

@@ -15,11 +15,10 @@ interface Person {
   readonly age?: number;
 }
 
-const person: Person = {
+export const person: Person = {
   name: 'Luciano',
   lastname: 'Machado',
   address: ['Rua A', 'Rua B'],
-  age: 30,
 };
 
 console.log(person);

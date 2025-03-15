@@ -1,4 +1,5 @@
 function reverseNameColor<T extends new (...args: any[]) => any>(target: T): T {
+  console.log('Sou o decorador e recebi', target);
   return class extends target {
     color: string;
     name: string;
@@ -13,10 +14,12 @@ function reverseNameColor<T extends new (...args: any[]) => any>(target: T): T {
     }
   };
 }
-
+//Ele é chamado aqui como se fosse uma função
 @reverseNameColor
 export class Animal {
-  constructor(public name: string, public color: string) {}
+  constructor(public name: string, public color: string) {
+    console.log('Sou a classe');
+  }
 }
 
 const animal = new Animal('gato', 'preto');

@@ -7,8 +7,7 @@ type User = {
 
 const verifyUser: VerifyUser = (user, sentValue) => {
   return (
-    user.username === sentValue.username &&
-    user.password === sentValue.password
+    user.username === sentValue.username && user.password === sentValue.password
   );
 };
 

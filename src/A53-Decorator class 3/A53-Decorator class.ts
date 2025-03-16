@@ -1,7 +1,10 @@
+interface Constructor {
+  new (...args: any[]): any;
+}
 // Isso é uma fábrica construtora, utilizado para passar parametros atraves de um decorator
 function reverseNameColor(params1: string, params2: string) {
   // Closure
-  return function <T extends new (...args: any[]) => any>(target: T): T {
+  return function (target: Constructor) {
     console.log('Sou o decorador e recebi', target);
     return class extends target {
       color: string;
@@ -20,8 +23,15 @@ function reverseNameColor(params1: string, params2: string) {
     };
   };
 }
+function otherDecorator(param1: string) {
+  return function (target: Constructor) {
+    console.log(`Sou o outro decorador ${param1}`);
+  };
+}
 
-//Ele é chamado aqui como se fosse uma função
+//Podemos utilizar mais de um decorator nas funções,
+//So que quanto mais perto da class ela será executada primeiro
+@otherDecorator('O parâmetro do outro decorador')
 @reverseNameColor('Value1', 'Value2')
 export class Animal {
   constructor(public name: string, public color: string) {

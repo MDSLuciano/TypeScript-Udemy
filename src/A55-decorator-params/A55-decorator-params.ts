@@ -1,16 +1,13 @@
+// Ainda não existe valor a ser passado no decorador de parametro
+// qualquer valor passado será omitido
 function decorator(
-  classPrototype: unknown,
-  nameMethod: string,
-  descriptor: PropertyDescriptor,
-): PropertyDescriptor | void {
+  classPrototype: any,
+  nameMethod: string | symbol,
+  index: number,
+): any {
   console.log(classPrototype);
   console.log(nameMethod);
-  console.log(descriptor);
-  return {
-    value: function (...args: string[]) {
-      return args[0].toUpperCase();
-    },
-  };
+  console.log(index);
 }
 
 export class OnePerson {
@@ -22,10 +19,7 @@ export class OnePerson {
     this.lastname = lastname;
     this.age = age;
   }
-  // Decorador de metodo, podemos adicionar funções ao objeto, como se tivesemos passando informações
-  // a um objeto, tornando assim configurável
-  @decorator
-  method(msg: string): string {
+  method(@decorator msg: string): string {
     return `${this.name} ${this.lastname}: ${msg}`;
   }
 

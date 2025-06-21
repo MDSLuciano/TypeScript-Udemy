@@ -12,6 +12,8 @@ function decorador(classPrototype: any, name: string | symbol): any {
   };
 }
 
+// Podemos utilizar esse decorador para alterar os valores passado dentro da classe
+// assim colocando mais possibilidades na class
 export class OnePerson {
   @decorador
   name: string;
